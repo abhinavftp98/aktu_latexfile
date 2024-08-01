@@ -1,0 +1,346 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{tocloft}
+
+% Remove dots from the table of contents
+\renewcommand{\cftdot}{}
+% Customizing chapter titles in the table of contents
+\renewcommand{\cftchappresnum}{CHAPTER }
+\renewcommand{\cftchapaftersnum}{}
+\renewcommand{\cftchapnumwidth}{6 em} % Adjust width as needed
+
+\geometry{
+	top=31mm,
+	bottom=26mm,
+	left=36mm,
+	right=21mm,
+	%    headheight=15pt,
+	%    includehead,
+	%    includefoot,
+}
+
+% Double spacing
+\onehalfspacing
+
+\begin{document}
+	\begin{titlepage}
+		\pagenumbering{roman}
+		\setcounter{page}{1}
+		\begin{center}
+			{\MakeUppercase{\fontsize{20}{24}\selectfont \textbf{TITLE OF THE THESIS TITLE OF THE THESIS TITLE OF THE THESIS }}}\\[1cm] %title of the thesis
+			
+			{\fontsize{14}{17}\selectfont \textbf{A Thesis Submitted\\
+					in Partial Fulfillment of the Requirements\\
+					for the Degree of}}\\[1cm]
+			
+			{\MakeUppercase{\fontsize{20}{24}\selectfont \textbf{master of technology}}}\\[.5cm]
+			
+			{\fontsize{14}{17}\selectfont \textbf{in}}\\
+			{\fontsize{16}{17}\selectfont \textbf{COMPUTER SCIENCE AND ENGINEERING}}\\    %field of specialization eg. CSE, MTA, etc.   
+			{\fontsize{14}{17}\selectfont \textbf{by}}\\[0.5cm]
+			{\MakeUppercase{\fontsize{16}{19}\selectfont \textbf{STUDENT NAME}}}\\ %name of student
+			
+			{\fontsize{12}{14}\selectfont (\textbf{Enrollment no. 22085806750xx})}\\[1cm] %enrollment number
+			
+			{\fontsize{12}{14}\selectfont \textbf{Under the joint Supervision of}}\\[0.2cm]
+			
+			\begin{tabular}{cc}
+				{\fontsize{14}{17}\selectfont \textbf{Dr. PRATEEK RAJ GAUTAM }} & {\fontsize{14}{17}\selectfont \textbf{Dr. PAWAN KUMAR TIWARI}} \\
+				{\fontsize{14}{17}\selectfont \textbf{UPES, Dehradun}} & {\fontsize{14}{17}\selectfont \textbf{IET, Lucknow}}
+			\end{tabular}\
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=35mm]{"cas_logo.png"}
+				%\includegraphics[width=35mm]{"Images/AKTU"}
+				
+			\end{figure}
+			
+			%             \begin{figure}[h]
+				%             	%\centering
+				% sub figure            	\includegraphics[width=35mm]{"Images/aktu"}
+				%             \end{figure}
+			
+			{\fontsize{12}{14}\selectfont \textbf{to the}}\\
+			{\MakeUppercase{\fontsize{14}{17}\selectfont \textbf{CENTRE FOR ADVANCED STUDIES}}}\\[.5cm] %collge name
+			{\fontsize{16}{19}\selectfont \textbf{DR. APJ ABDUL KALAM TECHNICAL UNIVERSITY\\
+					LUCKNOW}}\\
+			{\fontsize{14}{19}\selectfont \textbf{(Formerly Uttar Pradesh Technical University, Lucknow)}}\\[1cm]
+			
+			{\fontsize{16}{19}\selectfont \textbf{July, 2024}} %month, year
+			
+			\end{center}
+		\end{titlepage} 
+			
+			
+			
+			% Command for creating the certificate
+			
+			\chapter*{\fontsize{14}{17}\selectfont \centering CERTIFICATE}
+			\addcontentsline{toc}{chapter}{Certificate} %manually adding table of content
+			%    \begin{center}
+				\begin{doublespace}
+					Certified that \textbf{Name} (enrollment no. \textbf{22085806750xx}) has carried out the research work presented in this thesis entitled \textbf{“Title of the thesis”} for the award of \textbf{Master of Technology} from Dr. APJ Abdul Kalam Technical University, Lucknow under my/our supervision. The thesis embodies results of original work, and studies are carried out by the student himself/herself and the contents of the thesis do not form the basis for the award of any other degree to the candidate or to anybody else from this or any other University/Institution.\\[1cm]
+				\end{doublespace}
+				
+				\begin{minipage}[t]{0.5\textwidth}
+					
+					\textbf{Signature}\\[1.5cm]
+					(Dr. Prateek Raj Gautam)\\ 
+					Supervisor,\\
+					Assistant Professor,\\
+					(UPES, Dehradun)\\
+					Date :
+				\end{minipage}\hfill
+				\begin{minipage}[t]{0.5\textwidth}
+					
+					
+					\textbf{Signature}\\[1.5cm]
+					(Dr. Pawan Kumar Tiwari)\\
+					Supervisor,\\
+					Assistant Professor,\\
+					(IET, Lucknow)\\
+					Date :
+				\end{minipage}\\[1cm]
+			
+			\noindent The M. Tech Viva-Voice examination of \textbf{Name}, (Enrollment no. 22085806750xx) has been held on .................. and is accepted.\\[0.1cm]
+			\begin{flushright}
+				\textbf{(Dr. Anuj Kumar Sharma)}\\
+				Dean Academics,\\
+				Centre for Advanced Studies,\\
+				Dr. A.P.J. Abdul Kalam Technical University, Lucknow
+			\end{flushright}
+			
+		\chapter*{\fontsize{14}{17} \selectfont \centering ABSTRACT}
+			
+			\addcontentsline{toc}{chapter}{Abstract}
+			\begin{singlespace}
+				{\fontsize{12}{14}\selectfont} Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis.  \\
+					
+				\end{singlespace}
+			
+			\chapter*{\fontsize{14}{17} \selectfont \centering ACKNOWLEDGEMENT}
+			\addcontentsline{toc}{chapter}{Acknowledgement}
+			\begin{singlespace}
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, 
+				
+				
+			\end{singlespace}
+			
+			    \chapter*{\fontsize{14}{17}\selectfont \centering DECLARATION}
+			\addcontentsline{toc}{chapter}{Declaration} %manually adding table of content
+			
+			\begin{doublespace}
+				I hereby declare that the work presented in this report entitled “Railway Track Defect Detection Using Deep Learning",
+				was carried out by me. I have not submitted the matter embodied in this report for
+				the award of any other degree or diploma of any other University or Institute.\\
+				I have given due credit to the original authors/sources for all the words, ideas,
+				diagrams, graphics, computer programs, experiments, results, that are not my
+				original contribution. I have used quotation marks to identify verbatim sentences
+				and given credit to the original authors/sources.\\
+				I affirm that no portion of my work is plagiarized, and the experiments and
+				results reported in the report are not manipulated. In the event of a complaint of
+				plagiarism and the manipulation of the experiments and results, I shall be fully
+				responsible and answerable.\\[1cm]
+				
+				\raggedright % this command make the content start from the page margin       
+				
+				\begin{tabular}{ l l }
+					Name & : \textbf{Name}\\ 
+					Enrollment No. & : \textbf{ 22085806750xx}\\  
+					Field & : \textbf{ Computer Science and Engineering}\\
+				\end{tabular}
+				
+				\vspace{2cm}
+				Date:  .....................\\
+				Place: .....................\\
+				\vspace{1.5cm}
+				\textbf{(Candidate Signature)}
+			\end{doublespace}
+			
+			
+			
+			\renewcommand{\contentsname}{\fontsize{14}{17}\selectfont
+				\begin{center}
+					TABLE OF CONTENTS
+			\end{center}}
+			\addcontentsline{toc}{chapter}{Table of Contents} %manually adding table of content
+			\tableofcontents
+			
+			\begin{center}
+				
+				
+				\renewcommand{\listfigurename}{\fontsize{14}{17}\selectfont \centering LIST OF FIGURES}
+				\addcontentsline{toc}{chapter}{List of Figures} %manually adding table of content
+				\listoffigures
+			\end{center}    
+			\newpage
+			%\begin{center}
+			\renewcommand{\listtablename}{\fontsize{14}{17}\selectfont \centering 
+				\begin{centre}
+					LIST OF TABLES
+			\end{center}}
+			\addcontentsline{toc}{chapter}{List of Table} %manually adding table of content
+			%\listoftables
+			
+			
+			    \pagebreak
+			{\fontsize{14}{17}\selectfont \begin{center}
+					\textbf{LIST OF SYMBOLS ANS ABBREVATIONS}
+			\end{center} }
+			\addcontentsline{toc}{chapter}{List of Symbols and Abbrevations}
+			
+			
+			
+			\vspace{24pt}
+			
+			
+			\begin{tabular}{ll}
+				
+				
+				
+				
+				ML  &Machine Learning \\ 
+				IoT  & Internet of Things \\ 
+				TRL &   \\ 
+				
+				
+			\end{tabular}
+			\label{tab1}
+			
+			
+			
+			% Define chapter and section formatting
+			\titleformat{\chapter}[display]
+			{\normalfont\bfseries\centering}{CHAPTER \thechapter}{0pt}{\uppercase}
+			\titlespacing*{\chapter}{0pt}{0pt}{48pt}
+			
+			\titleformat{\section}
+			{\normalfont\bfseries\uppercase}{\thesection}{1em}{}
+			\titleformat{\subsection}
+			{\normalfont\bfseries}{\thesubsection}{1em}{}
+			\titleformat{\subsubsection}
+			{\normalfont\itshape}{\thesubsubsection}{1em}{}
+			
+			
+			
+			
+			\titlecontents{chapter}
+			[0pt]                                  % left margin
+			{\addvspace{10pt}}                     % above code
+			{\bfseries CHAPTER \thecontentslabel: \ } % numbered format
+			{}                                     % numberless format
+			{\hfill\contentspage}                  % filler-page format
+			
+			\titlecontents{section}
+			[52.5pt]                                  % left margin
+			{}                     % above code
+			{\bfseries \thecontentslabel: \MakeUppercase \ } % numbered format
+			{}                                     % numberless format
+			{\hfill\contentspage}                  % filler-page format
+			
+			
+			
+			\titlecontents{subsection}
+			[77pt]                                  % left margin
+			{}                     % above code
+			{\bfseries \thecontentslabel: \ } % numbered format
+			{}                                     % numberless format
+			{\hfill\contentspage}                  % filler-page format
+			
+			
+			
+			
+			
+			
+			\makeatletter
+			\renewcommand{\thebibliography}[1]{%
+				\newpage
+				\section*{\hspace{6cm} \large References \vspace{48pt}}%
+				\@mkboth{\MakeUppercase{References}}{\MakeUppercase{References}}%
+				\list{\@biblabel{\@arabic\c@enumiv}}{%
+					\settowidth\labelwidth{\@biblabel{#1}}%
+					\leftmargin\labelwidth
+					\advance\leftmargin\labelsep
+					\@openbib@code
+					\usecounter{enumiv}%
+					\let\p@enumiv\@empty
+					\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+				\sloppy
+				\clubpenalty4000
+				\@clubpenalty \clubpenalty
+				\widowpenalty4000%
+				\sfcode`\.\@m}
+			\makeatother
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{\MakeUppercase{Literature survey}}
+
+\section{title}
+
+\chapter{\MakeUppercase{Methodology}}
+
+\section{title}
+
+\chapter{\MakeUppercase{Result And Discussion}}
+
+
+
+
+
+
+
+
+\chapter{\MakeUppercase{Conclusion}}
+
+
+
+
+
+\newpage
+\begin{center}
+	{\MakeUppercase{\bfseries List Of Publication}}
+\end{center}
+% {\MakeUppercase{List Of Publication}}
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+
+			
+			
+			
+\bibliography{References}			
+			
+			
+			
+			
+			
+			
+\end{document}			
